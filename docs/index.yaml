@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  syslogserver:
+  - apiVersion: v1
+    created: "2025-02-11T18:25:21.479183324+05:30"
+    description: A Helm chart for deploying a Syslog Server
+    digest: eb5fbd6a6463e4c9939f5fa47f1ede210d48c7af34f1f38c8e0400c82f1388c2
+    name: syslogserver
+    urls:
+    - https://github.com/cypik-view/syslogserver-helm-chart.git/charts/syslogserver-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-02-11T18:25:21.477806533+05:30"
