@@ -1,0 +1,34 @@
+replicaCount: 1
+
+image:
+  repository: jchristn/syslogserver
+  tag: v2.0.0  # Change this to the correct tag
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 514
+
+serviceAccount:
+  create: true
+  name: ""  # Leave empty to use the default service account
+
+ingress:
+  enabled: false  # Set to true to enable ingress
+  name: ""
+  path: /
+  pathType: ImplementationSpecific
+  hosts:
+    - host: chart-example.local
+      paths:
+        - /
+  tls: []  # Array of TLS configurations
+  annotations: {}  # Annotations for the ingress resource
+
+autoscaling:
+  enabled: false  # Set to true to enable Horizontal Pod Autoscaler
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
+
+resources: {}
