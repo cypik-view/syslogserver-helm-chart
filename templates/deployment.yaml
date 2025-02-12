@@ -16,17 +16,17 @@ spec:
     spec:
       containers:
         - name: syslogserver
-          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
-              - containerPort: 514
+            - containerPort: {{ .Values.config.udpPort | default 514 }}
           volumeMounts:
             - name: syslog-config
-              mountPath: /app/syslog.json
-              subPath: syslog.json
+              mountPath: "/app/syslog.json"
+              subPath: "syslog.json"
             - name: syslog-logs
               mountPath: /app/logs/
           resources:
-            {{- toYaml .Values.resources | nindent 12 }}
+            {{- toYaml .Values.resources | nindent 10 }}
       restartPolicy: Always
       volumes:
         - name: syslog-config
@@ -34,4 +34,4 @@ spec:
             name: syslog-config
         - name: syslog-logs
           persistentVolumeClaim:
-            claimName: {{ .Values.pvc.name }}
+            claimName: {{ .Release.Name }}-pvc

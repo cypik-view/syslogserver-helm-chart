@@ -1,9 +1,0 @@
-pvc:
-  name: syslog-pvc-claim
-  accessModes:
-    - ReadWriteOnce
-  storage: 1Gi
-  storageClassName: standard
-
-
-
