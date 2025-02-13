@@ -2,11 +2,11 @@ apiVersion: v1
 entries:
   syslogserver:
   - apiVersion: v1
-    created: "2025-02-12T13:21:00.696922962+05:30"
+    created: "2025-02-13T13:06:24.007370755+05:30"
     description: A Helm chart for deploying a Syslog Server
-    digest: ceaa7571caf79029b11966d849eddff752bb3238813b1d9d9ac105d0ec85ed45
+    digest: 23ffa60c098665b3a5dd64a4542c4b800314a0e5328713c839597d60db202c49
     name: syslogserver
     urls:
     - syslogserver-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-12T13:21:00.696478922+05:30"
+generated: "2025-02-13T13:06:24.006843035+05:30"

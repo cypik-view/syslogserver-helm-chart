@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ .chart.Name }}
   labels:
-    app: {{ .Release.Name }}
+    app: {{ .chart.Name }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Release.Name }}
+      app: {{ .chart.Name }}
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}
+        app: {{ .chart.Name }}
     spec:
       containers:
         - name: syslogserver
@@ -34,4 +34,4 @@ spec:
             name: syslog-config
         - name: syslog-logs
           persistentVolumeClaim:
-            claimName: {{ .Release.Name }}-pvc
+            claimName: {{ .chart.Name }}-pvc
